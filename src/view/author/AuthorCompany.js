@@ -1,12 +1,17 @@
 import React, { Fragment } from "react";
 
-const AuthorCompany = () => {
+const AuthorCompany = (props) => {
+    if (!props.company) {
+        return null
+    }
+
+    const { company } = props;
     return (
         <Fragment>
             <div className="container author-div">
                 <h2>Company</h2>
-                <p>Name: nemanjina 4</p>
-                <p>Slogan: 77068</p>
+                <p>Name: {company.name}</p>
+                <p>Slogan: {company.slogan}</p>
 
             </div>
         </Fragment>

@@ -18,20 +18,8 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			// posts: [],
-			// users: []
 		}
 	}
-
-	// componentDidMount() {
-	// 	fetchPosts()
-	// 		.then((listOfPosts) => {
-	// 			this.setState({
-	// 				posts: listOfPosts
-	// 			})
-	// 			console.log(this.state.posts);
-	// 		});
-	// }
 
 	render() {
 		return (
@@ -41,9 +29,9 @@ class App extends Component {
 				<Switch>
 					<Route path="/post/new" component={CreatePost} />
 					<Route path="/about" component={About} />
-					<Route path="/singlePost" component={SinglePost} />
+					<Route path="/singlePost/:postId" component={SinglePost} />
 					<Route path="/authors" component={Authors} />
-					<Route path="/author" component={Author} />
+					<Route path="/author/:id" component={Author} />
 					<Route path="/" component={PostList} />
 				</Switch>
 				<Footer />

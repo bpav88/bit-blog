@@ -1,18 +1,24 @@
 import React, { Fragment } from "react";
 import "./AuthorAddress.css"
 
-const AuthorAddress = () => {
+const AuthorAddress = (props) => {
+    console.log(props);
+    if (!props.address) {
+        return null
+    }
+
+    const { address } = props;
     return (
         <Fragment>
             <div className="container clearFix author-div">
                 <div className="author-address-text ">
-                    <h2>Name Surname</h2>
-                    <p>Street: Bla Bla St</p>
-                    <p>City: Belgrade</p>
-                    <p>ZipCode: 11000</p>
+                    <h2>Address</h2>
+                    <p>Street: {address.city}</p>
+                    <p>City: {address.city}</p>
+                    <p>ZipCode: {address.zipcode}</p>
                 </div>
 
-                <img src="http://via.placeholder.com/300x200" className="author-address-img" />
+                <iframe title="frame" className="author-address-img" src={`https://maps.google.com/maps?q=${address.geoLat},${address.geoLng}&z=5&output=embed`}></iframe>
 
             </div>
         </Fragment>
